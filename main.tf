@@ -1,5 +1,6 @@
 resource "aws_vpc" "main" {
-  cidr_block = var.vpc_cidr
+  for_each   = var.vpc
+  cidr_block = each.value.cidr_block
 }
 
 
