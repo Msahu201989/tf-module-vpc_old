@@ -12,6 +12,9 @@ resource "aws_route_table" "route-table" {
   for_each   = var.subnets
   vpc_id     = var.vpc_id[0]
   tags       = {
-    Name     = each.value.name
+      Name    = "${var.env}-${each.value.name}-rt"
+      ENV     = var.env
+      PROJECT = "roboshop"
+    }
   }
 }
