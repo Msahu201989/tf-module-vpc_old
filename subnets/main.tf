@@ -17,4 +17,3 @@ resource "aws_route_table" "route-table" {
       PROJECT = "roboshop"
     }
   }
-}
