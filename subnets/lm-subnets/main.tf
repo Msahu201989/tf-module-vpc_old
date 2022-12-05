@@ -5,3 +5,9 @@ resource "aws_subnet" "main" {
   tags       = local.subnets_tags
   availability_zone = element(var.subnet_availability_zones, count.index)
 }
+
+resource "aws_route_table_association" "route-table-association" {
+  count          = length(aws_subnet.main)
+  subnet_id      = element(aws_subnet.main.*.id, count.index)
+  route_table_id = var.route_table_id
+}
