@@ -18,3 +18,7 @@ resource "aws_route_table" "route-table" {
       PROJECT = "roboshop"
     }
   }
+
+output "aws_route_table" {
+  value = aws_route_table.route-table
+}
