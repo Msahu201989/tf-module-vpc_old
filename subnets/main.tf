@@ -19,6 +19,3 @@ resource "aws_route_table" "route-table" {
     }
   }
 
-output "aws_route_table" {
-  value = aws_route_table.route-table
-}
