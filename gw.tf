@@ -29,5 +29,5 @@ resource "aws_route" "internet_gateway_route_to_public_subnets" {
   count                  = length(local.public_route_tables)
   route_table_id         = element(local.public_route_tables, count.index)
   destination_cidr_block = "0.0.0.0/0"
-  gateway_id             = aws_internet_gateway.gw.id
+  gateway_id             = aws_internet_gateway.gw[0].id
 }
