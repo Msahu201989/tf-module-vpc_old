@@ -13,6 +13,6 @@ resource "aws_route_table_association" "route-table-association" {
 }
 
 output "subnets" {
-  value = aws_subnet.main.*.id
+  value = aws_subnet.main
 }
 
