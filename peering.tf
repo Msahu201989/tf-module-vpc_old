@@ -12,3 +12,4 @@ resource "aws_route" "route_to_default_management_route_table" {
   destination_cidr_block    = each.value.cidr_block
   vpc_peering_connection_id = aws_vpc_peering_connection.management-vpc-to-env-vpc.*.id[0]
 }
+
