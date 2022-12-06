@@ -51,9 +51,10 @@ resource "aws_route" "peering_connection_route" {
 #}
 
 output "rt" {
-  value = {
-    for k, v in aws_route_table.aws_route_table : k => v.id
-  }
+ value = [for i, j in aws_route_table.aws_route_table: j.id]
+#  {
+#    for k, v in aws_route_table.aws_route_table : k => v.id
+#  }
 }
 
 
