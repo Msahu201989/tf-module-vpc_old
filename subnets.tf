@@ -31,5 +31,5 @@ module "private_subnets" {
 #}
 
 output "all_private_subnets" {
-  value = [for k,v in module.private_subnets : v.subnets.app.subnets ]
+  value = [ for i, j in [for k, v in module.private_subnets : v.subnets]: j.subnets ]
 }
