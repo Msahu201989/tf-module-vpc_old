@@ -22,18 +22,3 @@ module "private_subnets" {
   internet_gateway_id       = aws_internet_gateway.gw.*.id[0]
 }
 
-#output "public_subnets" {
-#  value = module.public_subnets
-#}
-#
-output "private_subnets" {
-    value = module.private_subnets
-}
-
-output "public_subnets" {
-  value = module.public_subnets
-}
-
-#output "all_private_subnets" {
-#  value = [for k, v in module.private_subnets : v.subnets]
-#}
