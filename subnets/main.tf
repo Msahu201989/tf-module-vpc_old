@@ -35,7 +35,7 @@ resource "aws_route" "peering_connection_route" {
 #}
 
 output "subnets" {
-  value = [ for i, j in module.lm-subnets: concat(j.subnets[0])]
+  value = [for i, j in module.lm-subnets: j.subnets]
 }
 
 #resource "null_resource" "test" {
