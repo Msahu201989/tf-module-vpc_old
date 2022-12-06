@@ -20,6 +20,14 @@ resource "aws_eip" "ngw" {
 #  }
 #}
 
+locals {
+  private_route_tables = [for i, j in module.private_subnets: j.rt]
+}
+
+output "test" {
+  value = local.private_route_tables
+}
+
 #resource "aws_route" "internet_gateway_route_to_public_subnets" {
 #  count                     = length(????)
 #  route_table_id            = element(???, count.index)
