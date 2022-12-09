@@ -9,4 +9,5 @@ locals {
     ENV     = var.env
     PROJECT = "roboshop"
   }
+
 }
