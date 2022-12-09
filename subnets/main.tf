@@ -35,14 +35,10 @@ resource "aws_route_table" "aws_route_table" {
   }
 }
 
-#resource "aws_route_table_association" "route-table-association" {
-#  count          = length(aws_subnet.main)
-#  subnet_id      = element(aws_subnet.main.*.id, count.index)
-#  route_table_id = var.route_table_id
-#}
-
-#output "subnets" {
-#  value = aws_subnet.main
-#}
+resource "aws_route_table_association" "route-table-association" {
+  count          = length(aws_subnet.main)
+  subnet_id      = element(aws_subnet.main.*.id, count.index)
+  route_table_id = aws_route_table.aws_route_table.id
+}
 
 
