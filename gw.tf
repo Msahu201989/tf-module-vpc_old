@@ -14,6 +14,7 @@ resource "aws_nat_gateway" "ngw" {
   allocation_id = aws_eip.ngw.id
   subnet_id     = lookup(lookup(module.public_subnets, "public", null), "subnets", null)[0].id
 
+
   tags = {
     Name = "NAT gw"
   }
