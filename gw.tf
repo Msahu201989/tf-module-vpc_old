@@ -10,15 +10,15 @@ resource "aws_eip" "ngw" {
   vpc    =  true
 }
 
-resource "aws_nat_gateway" "ngw" {
-  allocation_id = aws_eip.ngw.id
-  subnet_id     = lookup(lookup(module.public_subnets, "public", null), "subnets", null)[0].id
-
-
-  tags = {
-    Name = "NAT gw"
-  }
-}
+#resource "aws_nat_gateway" "ngw" {
+#  allocation_id = aws_eip.ngw.id
+#  subnet_id     = lookup(lookup(module.public_subnets, "public", null), "subnets", null)[0].id
+#
+#
+#  tags = {
+#    Name = "NAT gw"
+#  }
+#}
 #
 #locals {
 #  private_route_tables = flatten([for i, j in module.private_subnets: j.rt])
