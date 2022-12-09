@@ -1,5 +1,5 @@
 locals {
-  vpc_tags  = {
+  vpc_tags = {
     Name    = "${var.env}-vpc"
     ENV     = var.env
     PROJECT = "roboshop"
