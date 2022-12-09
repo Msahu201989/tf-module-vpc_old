@@ -17,3 +17,7 @@
 #  #    for k, v in aws_route_table.aws_route_table : k => v.id
 #  #  }
 #}
+
+output "subnets" {
+  value = "aws_subnet.main"
+}
