@@ -16,7 +16,7 @@ resource "aws_eip" "ngw" {
 #  tags = {
 #    Name = "NAT GW"
 #  }
-}
+#}
 
 
 #
