@@ -3,7 +3,7 @@
 #}
 #
 output "public_subnets" {
-  value = module.public_subnets
+  value = lookup(module.public_subnets, "public", null)
 }
 #
 #
