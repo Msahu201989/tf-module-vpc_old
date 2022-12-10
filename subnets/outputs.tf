@@ -19,7 +19,7 @@
 #}
 
 output "subnets" {
-  value = "aws_subnet.main"
+  value = aws_subnet.main
 }
 
 output "route_tables" {
